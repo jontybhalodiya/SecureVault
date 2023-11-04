@@ -1,0 +1,18 @@
+//SQL TABLES
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    rsa_public_key TEXT,
+    rsa_private_key TEXT
+);
+
+CREATE TABLE website_credentials (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    encrypted_url VARBINARY(MAX_LENGTH),
+    encrypted_username VARBINARY(MAX_LENGTH),
+    encrypted_password VARBINARY(MAX_LENGTH)
+);
+
